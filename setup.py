@@ -1,11 +1,16 @@
 import setuptools
 
+
+# rm -rf dist/  
+# python3 setup.py sdist bdist_wheel 
+# python3 -m twine upload --repository pypi dist/*
+
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
     name="oli", # Replace with your own username
-    version="0.0.8",
+    version="0.0.12",
     author="StanGirard",
     author_email="stan@primates.dev",
     description="One Liner Installer for Linux & MacOs",

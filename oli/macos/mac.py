@@ -1,5 +1,5 @@
 import importlib
-from oli.command.command import print_choice, check_input, run_input
+from oli.macos.command import print_choice, check_input, run_input
 
 switcher = {
         1: "Homebrew"
@@ -7,7 +7,7 @@ switcher = {
 
 def run():
     """Main Function"""
-
+    
     print("You are running MacOS")
     print_choice(switcher)
     value = check_input()

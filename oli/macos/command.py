@@ -12,12 +12,13 @@ def run_input(switch, value):
     string_value = switch.get(value, "Invalid Value")
     if string_value != 'Invalid Value':
         mymodule = importlib.import_module("." + string_value,  package=__package__)
+        print(mymodule)
         return_code = mymodule.run()
         if return_code is 0:
-            print("Installation Successfull")
+            print("Command Successfull")
             
         else:
-            print("An error occured during the installation")
+            print("An error occured during the execution")
             print("Please check the logs to see what was the cause and run the command again")
         return installation_finished()
     print("Invalid Value")
