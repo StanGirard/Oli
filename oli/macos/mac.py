@@ -1,17 +1,18 @@
 import importlib
-from oli.macos.command import print_choice, check_input, run_input
+from . import command
 
 switcher = {
-        1: "Homebrew"
+        1: "Homebrew",
+        2: "Oh-my-zsh"
     }
 
 def run():
     """Main Function"""
     
     print("You are running MacOS")
-    print_choice(switcher)
-    value = check_input()
-    exit = run_input(switcher, value)
+    command.print_choice(switcher)
+    value = command.check_input()
+    exit = command.run_input(switcher, value)
     if exit == 0:
         run()
     else: 
