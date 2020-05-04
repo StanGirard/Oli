@@ -1,5 +1,5 @@
 import platform
-from macos import macos
+from oli.macos import macos
 import signal
 import sys
 
