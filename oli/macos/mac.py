@@ -6,22 +6,14 @@ switcher = {
         2: "Oh-my-zsh"
     }
 
-def run():
+def run_macos():
     """Main Function"""
     
     print("You are running MacOS")
     command.print_choice(switcher)
     value = command.check_input()
-    exit = command.run_input(switcher, value)
-    if exit == 0:
-        run()
+    exit_value = command.run_input(switcher, value)
+    if exit_value == 0:
+        run_macos()
     else: 
         quit()
-        
-    
-    
-        
-
-
-if __name__ == "__main__":
-    run()
