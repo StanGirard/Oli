@@ -6,15 +6,27 @@ Oli is a one liner installer aimed at easing you with the installation of everyt
 
 Run `pip install oli`
 
+or 
+
+```Bash
+git clone https://github.com/StanGirard/Oli
+cd Oli
+```
+
 ## Usage 
 
 Run in your bash `oli`
+
+or 
+
+`python3 -m oli.run`
 
 ## Programs
 
 ### Macos
 
 -  Homebrew
+-  Oh My Zsh
 
 
 
