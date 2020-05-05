@@ -1,6 +1,7 @@
 import subprocess
 from oli.lib.command import bcolors
 
+
 def run_process(command_execute):
     process = subprocess.Popen(command_execute, 
                            stdout=subprocess.PIPE,
@@ -20,6 +21,7 @@ def run_process(command_execute):
                 print(bcolors.WARNING + output.strip() + bcolors.ENDC)
             break
     return return_code_script
+
 
 def run_process_no_log(command_execute):
     process = subprocess.Popen(command_execute, 

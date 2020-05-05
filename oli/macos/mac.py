@@ -4,7 +4,8 @@ switcher = {
         1: "Homebrew",
         2: "Oh-my-zsh",
         3: "Xcode",
-        4: "Development-setup"
+        4: "Development-setup",
+        5: "Netdata"
     }
 
 def run_macos():
