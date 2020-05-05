@@ -3,7 +3,8 @@ from . import command
 
 switcher = {
         1: "Homebrew",
-        2: "Oh-my-zsh"
+        2: "Oh-my-zsh",
+        3: "Xcode"
     }
 
 def run_macos():

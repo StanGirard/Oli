@@ -1,6 +1,17 @@
 import importlib
+
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 def installation_finished():
-        input_user = str(input("Would you like to install something else ? Default yes (y/n) ") or "y")
+        input_user = str(input(bcolors.OKBLUE +"\nWould you like to install something else ?" +  bcolors.ENDC + " Default yes (y/n) " ) or "y")
         if input_user.lower().startswith('y'):
             return 0
         else:
@@ -14,10 +25,10 @@ def run_input(switch, value):
         mymodule = importlib.import_module("." + string_value, package=__package__)
         return_code = mymodule.run()
         if return_code is 0:
-            print("Command Successfull")
+            print(bcolors.OKGREEN + "Command Successfull" + bcolors.ENDC )
             
         else:
-            print("An error occured during the execution")
+            print(bcolors.FAIL + "An error occured during the execution" + bcolors.ENDC)
             print("Please check the logs to see what was the cause and run the command again")
         return installation_finished()
     print("Invalid Value")
@@ -27,9 +38,9 @@ def run_input(switch, value):
 def check_input():
     """Checks the type of the input and keeps asking if not an int """
     
-    value = input("What would you like to install ? ")
+    value = input(bcolors.OKBLUE + "What would you like to install ? " + bcolors.ENDC)
     while not value.isdigit():
-        value = input("What would you like to install ? (A number please) ")
+        value = input(bcolors.OKBLUE +"What would you like to install ? (A number please) "+ bcolors.ENDC)
     return int(value)
 
     
@@ -37,8 +48,8 @@ def check_input():
 def print_choice(switcher_value):
     """Prints all the available choices"""
     print("----------------------")
-    
     for key in switcher_value:
         print(str(key) + " - " + str(switcher_value[key]))
 
     print("----------------------")
+
