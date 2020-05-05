@@ -27,6 +27,7 @@ or
 
 -  Homebrew
 -  Oh My Zsh
+-  Development Setup
 
 
 
