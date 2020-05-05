@@ -19,10 +19,10 @@ def installation_finished():
             
 
 
-def run_input(switch, value):
+def run_input(package, switch, value):
     string_value = switch.get(value, "Invalid Value")
     if string_value != 'Invalid Value':
-        mymodule = importlib.import_module("." + string_value, package=__package__)
+        mymodule = importlib.import_module("oli." + package + "." + string_value)
         return_code = mymodule.run()
         if return_code is 0:
             print(bcolors.OKGREEN + "Command Successfull" + bcolors.ENDC )

@@ -1,5 +1,4 @@
-import importlib
-from . import command
+from ..lib import command
 
 switcher = {
         1: "Homebrew",
@@ -14,7 +13,7 @@ def run_macos():
     print("You are running MacOS")
     command.print_choice(switcher)
     value = command.check_input()
-    exit_value = command.run_input(switcher, value)
+    exit_value = command.run_input("macos", switcher, value)
     if exit_value == 0:
         run_macos()
     else: 

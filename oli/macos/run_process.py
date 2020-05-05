@@ -1,5 +1,5 @@
 import subprocess
-from .command import bcolors
+from oli.lib.command import bcolors
 
 def run_process(command_execute):
     process = subprocess.Popen(command_execute, 

@@ -10,7 +10,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="oli", # Replace with your own username
-    version="0.0.17",
+    version="0.0.19",
     author="StanGirard",
     author_email="stan@primates.dev",
     description="One Liner Installer for Linux & MacOs",

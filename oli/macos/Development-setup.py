@@ -1,5 +1,5 @@
 from .run_process import run_process, run_process_no_log
-from .command import bcolors
+from oli.lib.command import bcolors
 from .Homebrew import run as hbrun
 
 def run_brew(name, command):
