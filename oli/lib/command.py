@@ -24,7 +24,7 @@ def run_input(package, switch, value):
     if string_value != 'Invalid Value':
         mymodule = importlib.import_module("oli." + package + "." + string_value)
         return_code = mymodule.run()
-        if return_code is 0:
+        if return_code == 0:
             print(bcolors.OKGREEN + "Command Successfull" + bcolors.ENDC )
             
         else:
