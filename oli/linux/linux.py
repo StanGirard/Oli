@@ -1,7 +1,8 @@
 from ..lib import command
 
 switcher = {
-        1: "Netdata"
+        1: "Netdata",
+        2: "Folding@Home"
     }
 
 def run_linux():
