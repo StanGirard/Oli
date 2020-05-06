@@ -23,10 +23,15 @@ or
 
 ## Programs
 
+### Linux
+
+- Netdata
+
 ### Macos
 
 -  Homebrew
 -  Oh My Zsh
+-  Xcode Command Line
 -  Development Setup
 
 
