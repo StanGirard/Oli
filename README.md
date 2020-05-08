@@ -26,6 +26,7 @@ or
 ### Linux
 
 - Netdata
+- Folding@Home
 
 ### Macos
 
