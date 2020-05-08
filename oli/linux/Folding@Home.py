@@ -13,14 +13,9 @@ def run():
     if str(input("Would you like to use your gpu ? Default No (y/n)" ) or "No").lower().startswith("y"):
         gpu = "true"
     if run_process("sudo mkdir -p ~/folding") == 0:
-        print("YEAH")
         if run_process("sudo wget -N https://download.foldingathome.org/releases/public/release/fahclient/debian-testing-64bit/v7.4/fahclient_7.4.4-64bit-release.tar.bz2 -P ~/folding/") == 0:
-            print("HAHAHAHAHAH")
             if run_process("sudo chown $USER:$USER ~/folding/") == 0:
-                print("HEHEHEHEHEHEH")
-                
-                if run_process("tar jxf ~/folding/fahclient_7.4.4-64bit-release.tar.bz2 --strip-components=1") == 0:
-                    print("WRITE")
+                if run_process("tar jxf ~/folding/fahclient_7.4.4-64bit-release.tar.bz2 --strip-components=1 -C ~/folding/ ") == 0:
                     with open(os.path.expanduser("~/folding/config.xml"), 'w') as configFile:
                         configFile.write(generateConfig(name, team, gpu))
                         return 0
