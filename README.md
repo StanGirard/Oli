@@ -1,6 +1,6 @@
 # Oli
 
-Oli is a one liner installer aimed at easing you with the installation of everything you need on different platforms.
+Oli is a one liner installer aimed at easing you with the installation of everything you need on different platforms. With no packages needed
 
 ## Installation
 
