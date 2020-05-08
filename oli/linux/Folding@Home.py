@@ -1,25 +1,29 @@
 from oli.lib.linux_process import run_process
+import os
 
-def generateConfig():
-    config = "<config> <user value='Anonymous'><team value='263124'><passkey value=''><smp value='true'><gpu value='false'><power value='full'></config>"
+def generateConfig(name, team, gpu):
+    config = '<config> <user value="' + str(name) + '"/><team value="' + str(team) + '"/><passkey value=""/><smp value="true"/><gpu value="'+ str(gpu) + '"/><power value="full"/></config>'
     return config
 
 def run():
     #sudo DEBIAN_FRONTEND=noninteractive apt-get install -y /home/stan/fahclient_7.4.4_amd64.deb
-    
-    
-    if run_process("sudo mkdir -p /run/folding") == 0:
+    name = str(input("\nWhat would you like your name to be ? Default Anonymous " ) or "Anonymous")
+    team = int(input("\nWhat team would you like to join (int) ? Default 263124 ") or "263124")
+    gpu = "false"
+    if str(input("Would you like to use your gpu ? Default No (y/n)" ) or "No").lower().startswith("y"):
+        gpu = "true"
+    if run_process("sudo mkdir -p ~/folding") == 0:
         print("YEAH")
-        if run_process("sudo wget -N https://download.foldingathome.org/releases/public/release/fahclient/debian-testing-64bit/v7.4/fahclient_7.4.4_amd64.deb -P /run/folding/") == 0:
+        if run_process("sudo wget -N https://download.foldingathome.org/releases/public/release/fahclient/debian-testing-64bit/v7.4/fahclient_7.4.4-64bit-release.tar.bz2 -P ~/folding/") == 0:
             print("HAHAHAHAHAH")
-            if run_process("sudo mkdir -p /etc/fahclient && sudo chown $USER:$USER /etc/fahclient/") == 0:
+            if run_process("sudo chown $USER:$USER ~/folding/") == 0:
                 print("HEHEHEHEHEHEH")
                 
-                if run_process("touch /etc/fahclient/config.xml") == 0:
-                    print("CHMOD")
-                    if run_process("chmod u+w /etc/fahclient/config.xml") == 0:
-                        print("WRITE")
-                        with open("/etc/fahclient/config.xml", 'w') as configFile:
-                            configFile.write(generateConfig())
+                if run_process("tar jxf ~/folding/fahclient_7.4.4-64bit-release.tar.bz2 --strip-components=1") == 0:
+                    print("WRITE")
+                    with open(os.path.expanduser("~/folding/config.xml"), 'w') as configFile:
+                        configFile.write(generateConfig(name, team, gpu))
+                        return 0
+                            
     return 1
     # FAHClient
