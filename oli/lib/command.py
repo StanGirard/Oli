@@ -22,7 +22,7 @@ def installation_finished():
 def run_input(package, switch, value):
     string_value = switch.get(value, "Invalid Value")
     if string_value != 'Invalid Value':
-        mymodule = importlib.import_module("oli." + package + "." + string_value)
+        mymodule = importlib.import_module("oli." + package + "." + string_value["file"])
         return_code = mymodule.run()
         if return_code == 0:
             print(bcolors.OKGREEN + "Command Successfull" + bcolors.ENDC )
@@ -49,7 +49,7 @@ def print_choice(switcher_value):
     """Prints all the available choices"""
     print("----------------------")
     for key in switcher_value:
-        print(str(key) + " - " + str(switcher_value[key]))
+        print(str(key) + " - " + str(switcher_value[key]["name"]) + " - " + str(switcher_value[key]["description"]))
 
     print("----------------------")
 
